@@ -25,6 +25,7 @@ This final project simulates a real-world scenario where you, as a Junior System
 3. Root/sudo privileges: Administrative access to install packages and modify system configurations
 
 ## 📁 Complete Project Structure
+``` bash
 cyber-dojo-project/
 
 ├── Documentation/
@@ -52,17 +53,71 @@ cyber-dojo-project/
 ├── verify_structure.sh                   # Structure validation
 
 └── init_project.sh                       # Quick initialization
+```
 
 ## 🚀 Quick Start Guide
 
 ## Phase 1: Environment Setup (5 minutes)
 
-### Clone/Download the Project Structure
+### 1. Clone/Download the Project Structure
+```bash
+# Navigate to your workspace
+cd ~
 
+# Create project directory
+mkdir cyber-dojo-project
+cd cyber-dojo-project
+```
+### 2. Create Essential Files
+```bash 
+# Create directory structure
+mkdir -p Documentation/Audit/Configuration
 
+# Create placeholder files
+touch Documentation/Audit/System_Inventory.log
+touch Server_Errors.txt
+touch report_draft.txt
+```
+### 3. Generate Setup Scripts
 
+## Phase 2: Complete All 10 Milestones
 
+### 📊 Milestone 1: Initial Reconnaissance
 
+#### Objective: Assess the current system state and environment.
+```bash
+# Task A: System Identity
+cat /etc/*release              # Determine distribution and version
+uname -r                       # Check kernel version
+
+# Task B: Environment Check
+pwd                            # Display current working directory
+echo $PATH                     # Show executable search path
+
+# Task C: Filesystem Mapping
+cd /                           # Change to root directory
+ls -l                          # List all contents with details
+```
+#### Key Concept: Understanding the Filesystem Hierarchy Standard (FHS) - /etc for configs, /var for logs, /bin for binaries.
+
+### 📝 Milestone 2: Building Documentation Base
+
+#### Objective: Create systematic documentation and error tracking.
+```bash
+# Task A: Structure Creation
+mkdir -p Documentation/Audit/Configuration
+
+# Task B: Data Capture
+ls -R / > Documentation/Audit/System_Inventory.log
+
+# Task C: Log Filtering
+grep -i "error" /var/log/dmesg >> Server_Errors.txt
+```
+#### Key Concept: Redirection (>) overwrites files, while append (>>) adds content. Essential for logging.
+
+### ⚙️ Milestone 3: Process & Resource Triage
+
+#### Objective: Identify and manage resource-intensive processes.
 
 
 
