@@ -1,6 +1,8 @@
 # Cyber-Dojo-Securing-Administering-the-Startup-Server
 
+```bash
 cat > README.md << 'EOF'
+```
 # Cyber-Dojo: Securing & Administering the Startup Server
 
 ## 🎯 Project Overview
