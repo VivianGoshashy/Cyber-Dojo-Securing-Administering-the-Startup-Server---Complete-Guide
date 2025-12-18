@@ -118,10 +118,64 @@ grep -i "error" /var/log/dmesg >> Server_Errors.txt
 ### ⚙️ Milestone 3: Process & Resource Triage
 
 #### Objective: Identify and manage resource-intensive processes.
+check bad_calc.sh file
 
+#### Key Concept: SIGTERM (15) allows cleanup; SIGKILL (9) is immediate. Always try SIGTERM first.
 
+### 🔐 Milestone 4: Implementing RBAC
 
+#### Objective: Establish secure access controls and permissions.
+```bash
+# Task A: New Group & User
+groupadd developers
+useradd -m -g developers dev_a
 
+# Task B: Secure Project Directory
+mkdir /opt/dev_project
+chown dev_a:developers /opt/dev_project
+
+# Task C: Set Permissions
+chmod 750 /opt/dev_project     # Owner: rwx, Group: r-x, Others: ---
+```
+
+#### Key Concept: Octal permissions (7=rwx, 5=r-x, 0=---). Principle of Least Privilege restricts access to essentials.
+
+### 📈 Milestone 5: Advanced Process Isolation
+
+#### Objective: Master process control and priority management.
+```bash
+# Task A: Launch in Background
+sleep 600 &                    # Start long-running process
+jobs                           # List background jobs
+
+# Task B: Detach for Reliability
+kill %1                        # Terminate first background job
+nohup sleep 600 &              # Start process immune to terminal hangups
+
+# Task C: Priority Adjustment
+renice +10 [PID]               # Increase niceness (lower priority)
+```
+#### Key Concept: nohup prevents SIGHUP on logout. Niceness (-20 to +19) controls CPU priority.
+
+### 📦 Milestone 6: Software Supply Chain Audit
+
+#### Objective: Manage software packages and ensure system integrity.
+```bash
+# Task A: Update Sources
+sudo apt update                # Refresh package lists
+
+# Task B: Install Tools
+sudo apt install net-tools cups -y
+
+# Task C: Audit Installation
+apt search telnet              # Search for packages
+apt show telnet                # Display package details
+```
+#### Key Concept: apt update fetches lists; apt install installs packages. Foundation for secure patching.
+
+### 🔍 Milestone 7: Log File Forensics and Reporting
+
+#### Objective: Analyze logs and automate text processing.
 
 
 
