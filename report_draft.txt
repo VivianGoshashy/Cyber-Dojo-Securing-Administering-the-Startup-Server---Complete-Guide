@@ -1,0 +1,9 @@
+# Task A: Initial Log View
+vi /etc/passwd                 # Open file
+# Type :q! to quit without saving
+
+# Task B: Structured Search (AWK)
+awk '/FAILED/ {print $1, $4}' /var/log/auth.log
+
+# Task C: Text Substitution (SED)
+sed 's/innovateco.com/secureco.io/g' report_draft.txt
