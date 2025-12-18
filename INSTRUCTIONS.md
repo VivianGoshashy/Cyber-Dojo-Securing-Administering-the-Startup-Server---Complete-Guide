@@ -259,7 +259,30 @@ Task C: Firewall Policy (Conceptual)
 
 Concept: Resource limits and security hardening
 
+## ✅ Verification
 
+After each milestone, run:
+```bash
+./check_progress.sh
+```
+
+All milestones should show `[PASS]` when complete.
+
+## 🐛 Troubleshooting
+
+1. Permission denied: Use `sudo` or run as root
+2. Command not found: Install missing packages
+3. File not found: Check current directory with `pwd`
+4. Process won't die: Use `kill -9 [PID]`
+
+## 🏆 Completion Checklist
+
+1. All 10 milestones completed
+2. `check_progress.sh` shows all `[PASS]`
+3. Backup archive created and verified
+4. CUPS service configured
+5. User dev_a with proper limits
+6. Documentation directory populated
 
 
 
